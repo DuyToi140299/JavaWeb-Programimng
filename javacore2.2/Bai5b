@@ -1,0 +1,10 @@
+run:
+Nhap m va n
+6 9
+*********
+*       *
+*       *
+*       *
+*       *
+*********
+BUILD SUCCESSFUL (total time: 2 seconds)
