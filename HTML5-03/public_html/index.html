@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div{
+                width: 960px;
+
+                border : 1px solid black;
+                margin :auto;
+                background-color: #58ACFA;
+            }
+
+            #cssname{
+                margin-left: 72px;
+                margin-top: 30px;
+            }
+            #cssemail{
+                margin-left: 72px;
+                margin-top: 20px;
+            }
+            #cssweb{
+                margin-left: 62px;
+                margin-top: 20px;
+            }
+            #cssmes{
+                margin-left: 60px;
+                margin-top: 20px;
+                padding-top: 1px;
+            }
+            #sub{
+                margin-left: 20px;
+                margin-top: 10px;
+            }
+            #css,textarea{
+                float:left;
+            }
+            b{
+                color: #DF013A;
+            }
+
+            .error{
+                color: red;
+                margin: 10px;
+            }
+            #infor{
+                border: 1px solid black;
+                widows: 450px;
+                padding :5px;
+                overflow: auto;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <form action="" method="post">
+                <p id="cssname"><b>Name:</b> <input id ="name"/>
+                    <span id ="errName" class="error"></span>
+                    <br/>
+                </p>
+                <p id ="cssemail"><b> Email:</b> <input id ="email" placeholder="Nhập email">
+                    <span id ="errEmail" class="error"></span>
+                    <br/>
+                </p>
+                <p id ="cssweb"><b> Website:</b><input id ="url">
+                    <span id="errUrl" class="error"></span>
+                    <br/>
+                </p>
+                <p id ="cssmes">
+                    <b id ="css">Message:</b>
+                    <textarea cols="20" rows="5" id="mess"></textarea>
+                    <span id="errMes" class="error"></span>
+                    <br/>
+
+                </p>
+
+                <br/>
+                <button onclick="checkInfo();return false;"  id ="sub" >Submit</button>
+            </form>
+            <div id="infor"></div>
+
+        </div>
+        <script>
+            function checkInfo() {
+                var checkName = document.getElementById("name").value;
+                var checkEmail = document.getElementById("email").value;
+                var checkUrl = document.getElementById("url").value;
+                var checkMes = document.getElementById("mess").value;
+                if (checkName == "") {
+                    document.getElementById("errName").innerHTML = "This field is not empty";
+                } else {
+                    document.getElementById("errName").innerHTML = "";
+                }
+                if (checkEmail == "") {
+                    document.getElementById("errEmail").innerHTML = "This field is not empty";
+                } else {
+                    document.getElementById("errEmail").innerHTML = "";
+                }
+                if (checkUrl == "") {
+                    document.getElementById("errUrl").innerHTML = "This field is not empty";
+                } else {
+                    document.getElementById("errUrl").innerHTML = "";
+                }
+                if (checkMes == "") {
+                    document.getElementById("errMes").innerHTML = "This field is required";
+                } else {
+                    document.getElementById("errMes").innerHTML = "";
+                }
+
+                var myReName = /^[a-z0-9_-]{3,16}$/;
+                var myArrayName = myReName.test(checkName);
+                if (myArrayName == false) {
+                    document.getElementById("errName").innerHTML = "This field is required";
+                    document.getElementById("errName").style.border = "color:red";
+                }
+
+                var myReEmail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+                var myArrayEmail = myReEmail.test(checkEmail);
+                if (myArrayEmail == false) {
+                    document.getElementById("errEmail").innerHTML = "A valid email address is required";
+                }
+                var myReUrl = /^[a-z0-9_-]{3,16}$/;
+                var myArrayUrl = myReUrl.test(checkUrl);
+                if (myArrayUrl == false) {
+                    document.getElementById("errUrl").innerHTML = "A valid url is required";
+                }
+
+                if (myArrayName == true && myArrayEmail == true && myArrayUrl == true) {
+                    info = "Name :" + name + "br/";
+                    info += "Email :" + email + "br/";
+                    info += "Website :" + url + "br/";
+                    info += "Messenger :" + mess + "br/";
+                    document.getElementById("infor").innerHTML = info;
+                }
+            }
+
+
+        </script>    
+    </body>
+</html>

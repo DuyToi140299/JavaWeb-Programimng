@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table{
+                background-color: #fff;
+                margin: auto;
+                margin-top: 10px;
+            }
+            #result{
+                height: 30px;
+                width: 176px;
+                background-color: #94AAD6;
+                color:  #fff;
+            }
+            body{
+                font-family: fantasy;
+            }
+
+            .btn{
+                width: 37px;
+                height: 30px;
+                background-color: #FFB6C1;
+            }
+
+            #equ{
+                height: 130px;
+            }
+            #calc{
+                width: 210px;
+                height: 230px;
+                border: 1px solid black;
+                text-align: center;
+                margin: auto;
+                border-radius: 10px;
+                background-color: #FFB6C1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="calc">
+            <table>
+                <tr>
+                    <td colspan="5"><input id="result" type="text"/></td>
+                </tr>
+                <tr>
+                    <td><button class="btn" value="+" onclick="result.value+= this.value">+</button></td>
+                    <td><button class="btn" value="-" onclick="result.value+= this.value">-</button></td>
+                    <td><button class="btn" value="*" onclick="result.value+= this.value">*</button></td>
+                    <td><button class="btn" value="/" onclick="result.value+= this.value">/</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="btn" value="7" onclick="result.value+= this.value">7</button></td>
+                    <td><button class="btn" value="8" onclick="result.value+= this.value">8</button></td>
+                    <td><button class="btn" value="9" onclick="result.value+= this.value">9</button></td>
+                    <td rowspan="4"><button class="btn" id ="equ" value="=" onclick="result.value= eval(result.value)">=</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="btn" value="4" onclick="result.value+= this.value">4</button></td>
+                    <td><button class="btn" value="5" onclick="result.value+= this.value">5</button></td>
+                    <td><button class="btn" value="6" onclick="result.value+= this.value">6</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="btn" value="1" onclick="result.value+= this.value">1</button></td>
+                    <td><button class="btn" value="2" onclick="result.value+= this.value">2</button></td>
+                    <td><button class="btn" value="3" onclick="result.value+= this.value">3</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="btn" value="0" onclick="result.value+= this.value">0</button></td>
+                    <td><button class="btn" value="." onclick="result.value+= this.value">.</button></td>
+                    <td><button class="btn" value="AC" onclick="result.value=''">AC</button></td>
+                </tr>              
+
+            </table>
+        </div>
+    </body>
+</html>
