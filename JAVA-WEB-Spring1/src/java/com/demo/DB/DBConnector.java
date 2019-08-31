@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.java.user;
+package com.demo.DB;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
+
 
 /**
  *
@@ -17,9 +19,8 @@ public class DBConnector {
     
     public Connection getConnect() throws ClassNotFoundException, SQLException{
         Class.forName("com.mysql.jdbc.Driver");
-        String str = "jdbc:mysql://localhost:3306/qlysinhvien";
-        Connection conn = DriverManager.getConnection(str, "JavaWeb", "hoicaidmm34");
-        return conn;
+        String str = "jdbc:mysql://localhost:3306/qlyduan";
+        return DriverManager.getConnection(str, "JavaWeb","hoicaidmm34");
     }
     
 }
